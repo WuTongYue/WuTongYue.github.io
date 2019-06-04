@@ -1,54 +1,116 @@
-<!DOCTYPE html>
-<html lang="zh-CN">
-<head>
-    <meta charset="UTF-8">
-    <link rel="canonical" href="https://blog.csdn.net/Psyduck_ing/article/details/79406591"/>
-    <meta http-equiv="content-type" content="text/html; charset=utf-8">
-    <meta name="renderer" content="webkit"/>
-    <meta name="force-rendering" content="webkit"/>
-    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <meta name="apple-mobile-web-app-status-bar-style" content="black">
-    <meta name="referrer" content="always">
-    <meta http-equiv="Cache-Control" content="no-siteapp" /><link rel="alternate" media="handheld" href="#" />
-    <meta name="shenma-site-verification" content="5a59773ab8077d4a62bf469ab966a63b_1497598848">
-        <meta name="csdn-baidu-search"  content='{"autorun":true,"install":true,"keyword":"嵌入式知识点 - Psyduck_ing的博客"}'>
+<html> 
+    <head>
+        <title>这是一首诗构成的网页</title>
+        <meta http-equiv="content-type" content="text/html;charset=utf-8">
+    </head>
+    <!--设置body的背景图片为20170331151615532.png -->
+<body class="nodata " > 
+    <link rel="stylesheet" href="https://csdnimg.cn/public/common/toolbar/content_toolbar_css/content_toolbar.css">
+    <script id="toolbar-tpl-scriptId" src="https://csdnimg.cn/public/common/toolbar/js/content_toolbar.js" type="text/javascript" domain="https://blog.csdn.net/"></script>
+<div id="kp_box_476" data-pid="476" data-track-view='{"mod":"kp_popu_476-923","con":",,"}' data-track-click='{"mod":"kp_popu_476-923","con":",,"}'><script src="//csdnimg.cn/public/common/indexSuperise/1.0.7/indexSuperise.js?20190508180304"></script>
+<script>
+window.csdn.indexSuperise({
+zIndex:11000,
+      smallMoveImg: '//img-ads.csdn.net/2019/201905051104467314.png',
+      bigMoveImg: '//img-ads.csdn.net/2019/201905051104363598.png',
+     link:'//edu.csdn.net/topic/ai30?utm_source=blogpopup',
+boxStyle:140,
+trackSuperId:476,
+smallMove:'notMove',  
+trackSId:923
+    });
+</script></div><link rel="stylesheet" href="https://csdnimg.cn/release/phoenix/template/css/blog_code-c3a0c33d5c.css">
+<link rel="stylesheet" href="https://csdnimg.cn/release/phoenix/vendor/pagination/paging.css">
+<script type="text/javascript">
+	var NEWS_FEED = function(){}
+</script>
+
+<link rel="stylesheet" href="https://csdnimg.cn/release/phoenix/template/css/chart-3456820cac.css" />
+<div class="container clearfix" id="mainBox">
+			<div class="recommend-right">
+  <ul class="recommend-fixed-box">
     
-    <link href="https://csdnimg.cn/public/favicon.ico" rel="SHORTCUT ICON">
-    <title>嵌入式知识点 - Psyduck_ing的博客 - CSDN博客</title>
+  </ul>
+</div>	    <main>
+        <div class="blog-content-box">
+  <div class="article-header-box">
+    <div class="article-header">
+      <div class="article-title-box">
+        <span class="article-type type-1 float-left">原</span>        <h1 class="title-article">嵌入式知识点</h1>
+      </div>
+      <div class="article-info-box">
+        <div class="article-bar-top">
+                                                  <span class="time">2018年02月28日 23:03:45</span>
+          <a class="follow-nickName" href="https://me.csdn.net/Psyduck_ing" target="_blank">Psyduck_ing</a>
+          <span class="read-count">阅读数：314</span>
+                  </div>
+        <div class="operating">
+                  </div>
+      </div>
+    </div>
+  </div>
+  <article class="baidu_pl">
+    <div id="article_content" class="article_content clearfix csdn-tracking-statistics" data-pid="blog" data-mod=popu_307 data-dsm="post">
+            <link rel="stylesheet" href="https://csdnimg.cn/release/phoenix/template/css/ck_htmledit_views-f57960eb32.css" />
+                              <link rel="stylesheet" href="https://csdnimg.cn/release/phoenix/template/css/ck_htmledit_views-f57960eb32.css" />
+          <div class="htmledit_views" id="content_views">
+            <p><span style="font-size:16px;"><strong>中断服务程序ISR特点：</strong>1.不能有返回值，必须用void  2.不能传递参数，必须用void  3.多用来处理短而高效的任务  4.ISR内部不可调用<strong>不可重入函数。</strong></span></p><p><span style="font-size:16px;"><strong>正确ISR例子：</strong></span></p><p><span style="font-size:16px;"><strong>void</strong> timer0_int(<strong>void</strong>) interrupt 1 using 1<br />{ <br /> unsigned char temp1 ;  <br /> unsigned char temp2 ;  <br /></span></p><p><span style="font-size:16px;">}</span></p><p><span style="font-size:16px;"><strong><span style="font-weight:bold;">错误ISR例子：</span></strong></span></p><p><span style="font-size:16px;">_interrupt <strong>double</strong> compute_area (<strong>double radius</strong>)<br />{<br /> double area = PI * radius * radius; //浮点运算耗时间<br /> <strong>printf(” Area = %f”, area); </strong>//调用了不可重入函数<br /> <strong>return area; </strong>//有返回值<br />}</span><br /></p><p><strong>不可重入函数</strong>：<span style="font-size:16px;">该函数不可以在还没有返回时再次被调用，也可以理解为不可以被中断的函数，从而不能运行在多任务的环境下，可能会造成<strong>死锁</strong>。如常见的printf,malloc,free等函数，因为这些函数通常引用了全局变量。printf(stdout全局变量)、malloc(全局内存分配表)、free(全局内存分配表)。</span></p><p><span style="font-size:16px;">编写<strong>可重入函数</strong>方法：在函数体内不访问全局变量，不使用静态局部变量，只使用局部变量，若必须访问全局变量，使用<strong>互斥信号量保护全局变量</strong>。</span></p><p><span style="font-size:16px;"><strong>死锁：</strong><span style="font-family:'FangSong_GB2312';"><span style="color:rgb(51,51,51);">死锁是指两个或两个以上的进程在执行过程中，由于竞争资源或者由于彼此通信而造成的一种阻塞的现象，若无外力作用，它们都将无法推进下去。此时称系统处于死锁状态或系统产生了死锁，这些永远在互相等待的进程称为死锁进程</span></span></span><span style="font-family:'FangSong_GB2312';font-size:18px;color:rgb(51,51,51);text-indent:28px;">。</span></p><p><span style="font-family:'FangSong_GB2312';color:rgb(51,51,51);text-indent:28px;"><span style="font-size:16px;"><strong>产生死锁的四个必要条件</strong>：1.互斥条件  2.不可抢占条件  3.占有且申请条件  4.循环等待条件</span></span></p><p><span style="font-size:16px;"><strong>保护多线程共享全局变量：</strong>1.关中断  2.给互斥量(原子锁)上锁</span></p>          </div>
+                  </div>
+  </article>
+</div>
 
-        
-                    <link rel="stylesheet" href="https://csdnimg.cn/release/phoenix/template/css/detail-7fc618a1d6.min.css">
-            
-        
-            <link rel="stylesheet" href="https://csdnimg.cn/release/phoenix/themes/skin3-template/skin3-template-9b39979775.min.css">
-        <script type="text/javascript">
-        var username = "Psyduck_ing";
-        var blog_address = "https://blog.csdn.net/psyduck_ing";
-        var static_host = "https://csdnimg.cn/release/phoenix/";
-        var currentUserName = "";
-        var isShowAds = true;
-        var isOwner = false;
-        var loginUrl = "http://passport.csdn.net/account/login?from=https://blog.csdn.net/Psyduck_ing/article/details/79406591"
-        var blogUrl = "https://blog.csdn.net/";
+<div class="hide-article-box hide-article-pos text-center">
+      <a class="" id="btn-readmore" data-track-view='{"mod":"popu_376","con":",https://blog.csdn.net/Psyduck_ing/article/details/79406591,"}' data-track-click='{"mod":"popu_376","con":",https://blog.csdn.net/Psyduck_ing/article/details/79406591,"}'>
+    展开阅读全文
+    <svg class="icon chevrondown" aria-hidden="true">
+        <use xlink:href="#csdnc-chevrondown"></use>
+      </svg>
+    </a>
+    </div>
+<script>
+  $(".MathJax").remove();
+  if ($('div.markdown_views pre.prettyprint code.hljs').length > 0) {
+    $('div.markdown_views')[0].className = 'markdown_views';
+  }
+</script>        <div id="dmp_ad_58"><div id="kp_box_58" data-pid="58" data-track-view='{"mod":"kp_popu_58-402","con":",,"}' data-track-click='{"mod":"kp_popu_58-402","con":",,"}'><div style="width:100%;background:#fff;border:3px solid #fff;padding:16px 0px 0px 0px;">
+<script type="text/javascript" src="//static.mediav.com/js/mvf_news_feed.js"></script>
+<div id="three_ad1" class="mediav_ad" ></div>
+<script>
+                                               NEWS_FEED({
+                w: 900,
+                h : 100,
+                showid : 'ztvJV8',
+                placeholderId: "three_ad1",
+                inject : 'define',
+                define : {
+                    imagePosition : 'left',
+                    imageBorderRadius : 0,
+                    imageWidth: 90,
+                    imageHeight: 68,
+                    imageFill : 'clip',
+                    displayImage : true,
+                    displayTitle : true,
+                    titleFontSize: 18,
+                    titleFontColor: '#000',
+                    titleFontFamily : 'Lato,-apple-system,SF UI Text,Arial,PingFang SC,Hiragino Sans GB,Microsoft YaHei,WenQuanYi Micro Hei,sans-serif',
+                    titleFontWeight: 'bold',
+                    titlePaddingTop : 0,
+                    titlePaddingRight : 0,
+                    titlePaddingBottom : 5,
+                    titlePaddingLeft : 16,
+                    displayDesc : true,
+                    descFontSize: 14,
+                    descFontColor: '#8e959a',
+                    descFontFamily : 'Microsoft YaHei',
+                    paddingTop : 10,
+                    paddingRight : 0,
+                    paddingBottom : 0,
+                    paddingLeft : 20,
+                    backgroundColor: '#fff',
+                    hoverColor: '#000'
+                      }
+                  })
+                                        </script>
+    </body>
 
-        var curSkin = "skin3-template";
-        // 第四范式所需数据
-        var articleTitles = "嵌入式知识点 - Psyduck_ing的博客";
-        
-        var nickName = "Psyduck_ing";
-        var isCorporate = false;
-        var subDomainBlogUrl = "https://blog.csdn.net/"
-        var digg_base_url = "https://blog.csdn.net/psyduck_ing/phoenix/comment";
-        var articleDetailUrl = "https://blog.csdn.net/Psyduck_ing/article/details/79406591";
-    </script>
-    <script src="https://csdnimg.cn/public/common/libs/jquery/jquery-1.9.1.min.js" type="text/javascript"></script>
-    <script src="https://csdnimg.cn/rabbit/exposure-click/main-1.0.6.js"></script>
-    <script src="//g.csdnimg.cn/??fixed-sidebar/1.1.3/fixed-sidebar.js,track/1.2.6/track.js" type="text/javascript"></script>
-    <link rel="stylesheet" href="https://csdnimg.cn/public/sandalstrap/1.4/css/sandalstrap.min.css">
-    <style>
-        .MathJax, .MathJax_Message, .MathJax_Preview{
-            display: none
-        }
-    </style>
-</head>
+</html>
